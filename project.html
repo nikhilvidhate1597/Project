@@ -7,7 +7,7 @@
     <title>Backtracking</title>
     <link rel="icon" type="image" href="./Backtracking image.png"/>
 </head>
-<body bgcolor="#ffffff">
+<body color="black">
     <b>
         <font size="6">Backtracking</font>
     </b>
@@ -55,7 +55,7 @@
         </b>
     </p>
     <p>Here is the algorithm (in pseudocode) for doing backtracking from a given node n:</p>
-    <pre style="color:#660000">
+    <pre style="color:brown">
         boolean solve(Node n) {
             if n is a leaf node {
                 if the leaf is a goal node, return true
@@ -70,43 +70,43 @@
     </pre>
     <p>
         Notice that the algorithm is expressed as a 
-        <i style="color:#660000">boolean</i>
+        <i style="color:brown">boolean</i>
         function. This is essential to understanding the algorithm. If 
-        <code style="color:#660000">solve(n)</code> 
+        <code style="color:brown">solve(n)</code> 
         is true, that means node 
-        <code style="color:#660000">n</code> 
+        <code style="color:brown">n</code> 
         is part of a solution--that is, node 
-        <code style="color:#660000">n</code> 
+        <code style="color:brown">n</code> 
         is one of the nodes on a path from the root to some goal node. We say that 
-        <code style="color:#660000">n</code> 
+        <code style="color:brown">n</code> 
         is solvable. If 
-        <code style="color:#660000">solve(n)</code> 
+        <code style="color:brown">solve(n)</code> 
         is false, then there is 
-        <i style="color:#660000">no</i>
+        <i style="color:brown">no</i>
         path that includes 
-        <code style="color:#660000">n</code> to any goal node.
+        <code style="color:brown">n</code> to any goal node.
     </p>
     <p>How does this work?</p>
     <ul>
         <li>If any child of 
-        <code style="color:#660000">n</code> 
+        <code style="color:brown">n</code> 
         is solvable, then 
-        <code style="color:#660000">n</code> is solvable</li>
+        <code style="color:brown">n</code> is solvable</li>
         <li>If no child of 
-        <code style="color:#660000">n</code> 
+        <code style="color:brown">n</code> 
         is solvable, then 
-        <code style="color:#660000">n</code>
+        <code style="color:brown">n</code>
          is not solvable.</li>
     </ul>
     <p>
         Hence, to decide whether any non-leaf node 
-        <code style="color:#660000">n</code> 
-        is solvable (part of a path to a goal node), all you have to do is test whether any child of <code style="color:#660000">n</code>
+        <code style="color:brown">n</code> 
+        is solvable (part of a path to a goal node), all you have to do is test whether any child of <code style="color:brown">n</code>
         is solvable. This is done recursively, on each child of 
-        <code style="color:#660000">n</code>
+        <code style="color:brown">n</code>
         code. In the above code, this is done by the lines
     </p>
-    <pre style="color:#660000">
+    <pre style="color:brown">
         for each child c of n {
             if solve(c) succeeds, return true
         }
@@ -115,7 +115,7 @@
     <p>
         Eventually the recursion will "bottom" out at a leaf node. If the leaf node is a goal node, it is solvable; if the leaf node is not a goal node, it is not solvable. This is our base case. In the above code, this is done by the lines
     </p>
-    <pre style="color:#660000">
+    <pre style="color:brown">
         if n is a leaf node {
             if the leaf is a goal node, return true
             else return false
@@ -124,7 +124,6 @@
     <p>
         The backtracking algorithm is simple but important. You should understand it thoroughly. Another way of stating it is as follows:
     </p>
-    <dir>
         <li>
             To search a tree:
         </li>
@@ -137,7 +136,6 @@
 
             </li>
         </ol>
-    </dir>
     <p>
         <b>
             <font size="+1">Non-recursive backtracking, using a stack</font>
@@ -146,7 +144,7 @@
     <p>
         Backtracking is a rather typical recursive algorithm, and any recursive algorithm can be rewritten as a stack algorithm. In fact, that is how your recursive algorithms are translated into machine or assembly language.
     </p>
-    <pre style="color:#660000">
+    <pre style="color:brown">
         boolean solve(Node n) {
             put node n on the stack;
             while the stack is not empty {
@@ -175,7 +173,7 @@
     <p>
         Here is the recursive backtracking algorithm, modified slightly to print (in reverse order) the nodes along the successful path:
     </p>
-    <pre style="color:#660000">
+    <pre style="color:brown">
         boolean solve(Node n) {
             if n is a leaf node {
                 if the leaf is a goal node {
@@ -205,9 +203,9 @@
     </p>
     <p>
         To keep the program clean, therefore, tests like this should be buried in methods. In a chess game, for example, you could test whether a node is a leaf by writing a 
-        <code style="color:#660000">gameOver</code> 
+        <code style="color:brown">gameOver</code> 
         method (or you could even call it 
-        <code style="color:#660000"> isLeaf</code>
+        <code style="color:brown"> isLeaf</code>
         ). This method would encapsulate all the ugly details of figuring out whether any possible moves remain.
     </p>
     <p>
@@ -225,21 +223,21 @@
     </p>
     <p>
         For example, you might be able to number the children 
-        <code style="color:#660000">1</code>
+        <code style="color:brown">1</code>
         through 
-        <code style="color:#660000">n</code>
+        <code style="color:brown">n</code>
         , and try them in numerical order. Then, if you have just tried child 
-        <code style="color:#660000"> k</code>
+        <code style="color:brown"> k</code>
         , you know that you have already tried children 
-        <code style="color:#660000">1</code>
+        <code style="color:brown">1</code>
         through 
-        <code style="color:#660000">k-1</code>
+        <code style="color:brown">k-1</code>
         , and you have not yet tried children 
-        <code style="color:#660000">k+1</code> 
+        <code style="color:brown">k+1</code> 
         through 
-        <code style="color:#660000">n</code>
+        <code style="color:brown">n</code>
         . 
-        <code style="color:#660000">Or</code>
+        <code style="color:brown">Or</code>
         , if you are trying to color a map with just four colors, you can always try red first, then yellow, then green, then blue. If child yellow fails, you know to try child green next. If you are searching a maze, you can try choices in the order left, straight, right (or perhaps north, east, south, west).
     </p>
     <p,>
@@ -277,7 +275,7 @@
         <img src="/root.gif">
     </p>
     <p>Here's a definition of the BinaryTree class:</p>
-    <pre style="color:#660000">
+    <pre style="color:brown">
         public class BinaryTree {
             BinaryTree leftChild = null;
             BinaryTree rightChild = null;
@@ -294,12 +292,12 @@
     </pre>
     <p>
         Next we will create a 
-        <code style="color:#660000">TreeSearch</code>
+        <code style="color:brown">TreeSearch</code>
         class, and in it we will define a method 
         <code>makeTree()</code>
         which constructs the above binary tree.
     </p>
-    <pre style="color:#660000">
+    <pre style="color:brown">
         static BinaryTree makeTree() {
             BinaryTree root, a, b, c, d, e, f;
             c = new BinaryTree("C", null, null, false);
@@ -315,7 +313,7 @@
     <p>
         Here's a main program to create a binary tree and try to solve it:
     </p>
-    <pre style="color:#660000">
+    <pre style="color:brown">
         public static void main(String args[]) {
             BinaryTree tree = makeTree();
             System.out.println(solvable(tree));
@@ -324,13 +322,13 @@
     <p>
         And finally, here's the recursive backtracking routine to "solve" the binary tree by finding a goal node.
     </p>
-    <pre style="color:#660000">
+    <pre style="color:brown">
         static boolean solvable(BinaryTree node) {
-            <font color="#0000ff">/* 1 */</font>if (node == null) return false;
-            <font color="#0000ff">/* 2 */</font>if (node.isGoalNode) return true;
-            <font color="#0000ff">/* 3 */</font>if (solvable(node.leftChild)) return true;
-            <font color="#0000ff">/* 4 */</font>if (solvable(node.rightChild)) return true;
-            <font color="#0000ff">/* 5 */</font>return false;
+            <font style="color:blue">/* 1 */</font>if (node == null) return false;
+            <font style="color:blue">/* 2 */</font>if (node.isGoalNode) return true;
+            <font style="color:blue">/* 3 */</font>if (solvable(node.leftChild)) return true;
+            <font style="color:blue">/* 4 */</font>if (solvable(node.rightChild)) return true;
+            <font style="color:blue">/* 5 */</font>return false;
             }
     </pre>
     <p>
@@ -345,13 +343,13 @@
         </li>
         <li>
             See if the left child of 
-            <code style="color:#660000">node</code> 
+            <code style="color:brown">node</code> 
             is solvable, and if so, conclude that 
-            <code style="color:#660000">node</code>
+            <code style="color:brown">node</code>
             is solvable. We will only get to this line if 
-            <code style="color:#660000">node</code>
+            <code style="color:brown">node</code>
             is non-null and is not a goal 
-            <code style="color:#660000">node</code>
+            <code style="color:brown">node</code>
             , says to
         </li>
         <li>
@@ -359,21 +357,21 @@
         </li>
         <li>
             Since neither child of 
-            <code style="color:#660000">node</code>
+            <code style="color:brown">node</code>
             is solvable, 
-            <code style="color:#660000">node</code>
+            <code style="color:brown">node</code>
             itself is not solvable.
         </li>
     </ol>
     <p>This program runs correctly and produces the unenlightening result true.</p>
     <p>
         Each time we ask for another node, we have to check if it is 
-        <code style="color:#660000">null</code>
+        <code style="color:brown">null</code>
         . In the above we put that check as the first thing in 
-        <code style="color:#660000">solvable</code>
+        <code style="color:brown">solvable</code>
         . An alternative would be to check first whether each child exists, and recur only if they do. Here's that alternative version:
     </p>
-    <pre style="color:#660000">
+    <pre style="color:brown">
         static boolean solvable(BinaryTree node) {
             if (node.isGoalNode) return true;
             if (node.leftChild != null && solvable(node.leftChild)) return true;
@@ -413,20 +411,20 @@
     </p>
     <p>
         In both methods, the colors are represented by integers, from 
-        <code style="color:#660000">RED=1</code>
+        <code style="color:brown">RED=1</code>
         to 
-        <code style="color:#660000">BLUE=4</code>
+        <code style="color:brown">BLUE=4</code>
         . We define the following helper methods. The helper method code isn't displayed here because it's not important for understanding the method that does the backtracking.
     </p>
     <dl>
-        <dt style="color:#660000">
+        <dt style="color:brown">
             boolean mapIsOK()
         </dt>
         <dd>
             Used by method 1 to check (at a leaf node) whether the entire map is colored correctly.
         </dd>
         <br>
-        <dt style="color:#660000">
+        <dt style="color:brown">
             boolean okToColor(int row, int column, int color)
         </dt>
         <dd>
@@ -441,7 +439,7 @@
         </dd>
     </dl>
     <p>Here's the code for method 1:</p>
-    <pre style="color:#660000">
+    <pre style="color:brown">
         boolean explore1(int row, int column, int color) {
             if (row >= NUM_ROWS)<b>return mapIsOK()</b>;
             map[row][column] = color;
@@ -453,7 +451,7 @@
         }
     </pre>
     <p>And here's the code for method 2:</p>
-    <pre style="color:#660000">
+    <pre style="color:brown">
         boolean explore2(int row, int column, int color) {
             if (row >= NUM_ROWS) <b>return true</b>;
             <b>if (okToColor(row, column, color)) {</b>
@@ -471,20 +469,20 @@
     </p>
     <table align="center" border="1" cellpadding="4">
         <tbody>
-            <tr bgcolor="#cccccc">
-                <td bgcolor="#ffffff">&nbsp;</td>
+            <tr style="background-color:gray">
+                <td style="background-color:white">&nbsp;</td>
                 <td>2 by 3 map</td>
                 <td>3 by 3 map</td>
                 <td>3 by 4 map</td>
             </tr>
             <tr>
-                <td bgcolor="#cccccc">Method 1:</td>
+                <td style="background-color:gray">Method 1:</td>
                 <td>60 ms</td>
                 <td>940 ms</td>
                 <td>60530 ms (1 minute)</td>
             </tr>
             <tr>
-                <td bgcolor="#cccccc">Method 2:</td>
+                <td style="background-color:gray">Method 2:</td>
                 <td>0 ms</td>
                 <td>0 ms</td>
                 <td>0 ms</td>
@@ -519,7 +517,7 @@
 <p>
     Here's our debugging code. For this trivial program, there's almost more debugging code than actual code, but in larger programs the proportions will be better.
 </p>
-<pre style="color:#660000">
+<pre style="color:brown">
     static String indent = "";
     
     static String name(BinaryTree node) {
@@ -546,7 +544,7 @@
     To use this code, we modify solvable as follows:
 </pre>
 <p>To use this code, we modify solvable as follows</p>
-<pre style="color:#660000">
+<pre style="color:brown">
     static boolean solvable(BinaryTree node) {
         <b>enter(node);</b>
         if (node == null) return <b>no(node);</b>
@@ -559,7 +557,7 @@
 <p>
     And we get these results:
 </p>
-<pre style="color: #660000;">
+<pre style="color:brown;">
     <b>Entering solvable(Root)
         |  Entering solvable(A)
         |  |  Entering solvable(C)
@@ -589,17 +587,17 @@
 <p>
     Obviously, you don't want to print out all this debugging information from a program you are ready to submit (or to turn over to your manager). You could comment out your debugging calls, but that can be a lot of work. What's more, in the above example, you would have to replace every <code style="color:#660000">return(yes(node))</code> 
     with 
-    <code style="color:#660000">return(true)</code>
+    <code style="color:brown">return(true)</code>
     , and every 
-    <code style="color:#660000">(no(node))</code> 
+    <code style="color:brown">(no(node))</code> 
     with 
-    <code style="color:#660000">return false</code>
+    <code style="color:brown">return false</code>
     . With all these changes, you might introduce new bugs into your program.
 </p>
 <p>
     The simple solution is to make your debugging statements conditional. For example,
 </p>
-<pre style="color:#660000">
+<pre style="color:brown">
     <b>static final boolean debugging = false;</b>
 
     static void enter(BinaryTree node) {
@@ -626,26 +624,26 @@
     }
 </pre>
 In industry, actual programs often have multiple flags to control different aspects of debugging. Don't worry too much about making your code larger; modern compilers will notice that since the variable 
-<code style="color:#660000">debugging is final</code>
+<code style="color:brown">debugging is final</code>
 , it can never be 
-<code style="color:#660000">true</code>
+<code style="color:brown">true</code>
 , and the controlled code will be discarded.
 <p>
     <b>Trick #4: Create an Exception.</b> If an Exception is thrown, you can get information about just where it happened by sending it the message 
-    <code style="color:#660000">printStackTrace(PrintStream)</code>
+    <code style="color:brown">printStackTrace(PrintStream)</code>
     . Since an Exception is an object like any other, you can create and 
-    <code style="color:#660000">throw</code> 
+    <code style="color:brown">throw</code> 
     your own Exceptions. However, Java programmers don't always realize that you can create an Exception 
     <i>without</i> 
     throwing it. For example, the following code
 </p>
-<pre style="color:#660000">
+<pre style="color:brown">
     new Exception("Checkpoint Charlie").printStackTrace(System.out);
 </pre>
 <p>
     will print out a message something like this, and the program will then continue normally. That is, the above code just acts like a print statement.
 </p>
-<pre style="color:#660000">
+<pre style="color:br">
     java.lang.Exception: Checkpoint Charlie
         at TreeSearch.solvable(TreeSearch.java:53)
         at TreeSearch.solvable(TreeSearch.java:57)
@@ -661,7 +659,7 @@ In industry, actual programs often have multiple flags to control different aspe
 <p>
     I call the following puzzle "Cindy's puzzle" for historical reasons. You have some number n of black marbles and the same number of white marbles, and you have a playing board which consists simply of a line of 2n+1 spaces to put the marbles in. Start with the black marbles all at one end (say, the left), the white marbles all at the other end, and a free space in between.
 </p>
-<table align="center" bgcolor="#dddddd" border="1" cellpadding="6" cellspacing="0">
+<table align="center" style="background-color:gray" border="1" cellpadding="6" cellspacing="0">
     <tbody><tr>
       <td width="44"><img src="./black-ball.gif" height="44" width="44"></td>
       <td width="44"><img src="./black-ball.gif" height="44" width="44"></td>
@@ -671,7 +669,7 @@ In industry, actual programs often have multiple flags to control different aspe
     </tr></tbody>
 </table>
 <p>The goal is to reverse the positions of the marbles:</p>
-<table align="center" bgcolor="#dddddd" border="1" cellpadding="6" cellspacing="0">
+<table align="center" style="background-color:gray" cellpadding="6" cellspacing="0">
     <tbody><tr>
         <td width="44"><img src="./white-ball.gif" height="44" width="44"></td>
         <td width="44"><img src="./white-ball.gif" height="44" width="44"></td>
@@ -696,7 +694,7 @@ In industry, actual programs often have multiple flags to control different aspe
     <tbody><tr> 
       <td><b>Starting position:</b></td>
       <td> 
-        <table align="center" bgcolor="#dddddd" border="1" cellpadding="6" cellspacing="0">
+        <table align="center" style="background-color:gray" border="1" cellpadding="6" cellspacing="0">
             <tbody><tr>
                 <td width="44"><img src="./black-ball.gif" height="44" width="44"></td>
                 <td width="44"><img src="./black-ball.gif" height="44" width="44"></td>
@@ -710,7 +708,7 @@ In industry, actual programs often have multiple flags to control different aspe
     <tr> 
       <td><b>Black moves ahead:</b></td>
       <td> 
-        <table align="center" bgcolor="#dddddd" border="1" cellpadding="6" cellspacing="0">
+        <table align="center" style="background-color:gray" border="1" cellpadding="6" cellspacing="0">
           <tbody><tr> 
             <td height="44" width="44"><img src="./black-ball.gif" height="44" width="44"></td>
             <td height="44" width="44">&nbsp;</td>
@@ -724,7 +722,7 @@ In industry, actual programs often have multiple flags to control different aspe
     <tr> 
       <td><b>White jumps:</b></td>
       <td> 
-        <table align="center" bgcolor="#dddddd" border="1" cellpadding="6" cellspacing="0">
+        <table align="center" style="background-color:gray" border="1" cellpadding="6" cellspacing="0">
           <tbody><tr> 
             <td height="44" width="44"><img src="./black-ball.gif" height="44" width="44"></td>
             <td height="44" width="44"><img src="./white-ball.gif" height="44" width="44"></td>
@@ -738,7 +736,7 @@ In industry, actual programs often have multiple flags to control different aspe
     <tr> 
       <td><b>Black moves ahead:</b></td>
       <td> 
-        <table align="center" bgcolor="#dddddd" border="1" cellpadding="6" cellspacing="0">
+        <table align="center" style="background-color:gray" border="1" cellpadding="6" cellspacing="0">
           <tbody><tr> 
             <td height="44" width="44"><img src="./black-ball.gif" height="44" width="44"></td>
             <td height="44" width="44"><img src="./white-ball.gif" height="44" width="44"></td>
@@ -752,7 +750,7 @@ In industry, actual programs often have multiple flags to control different aspe
     <tr> 
       <td><b>Black jumps:</b></td>
       <td> 
-        <table align="center" bgcolor="#dddddd" border="1" cellpadding="6" cellspacing="0">
+        <table align="center" style="background-color:gray" border="1" cellpadding="6" cellspacing="0">
           <tbody><tr> 
             <td height="44" width="44">&nbsp;</td>
             <td height="44" width="44"><img src="./white-ball.gif" height="44" width="44"></td>
@@ -766,7 +764,7 @@ In industry, actual programs often have multiple flags to control different aspe
     <tr> 
       <td><b>White moves ahead:</b></td>
       <td> 
-        <table align="center" bgcolor="#dddddd" border="1" cellpadding="6" cellspacing="0">
+        <table align="center" style="background-color:gray"border="1" cellpadding="6" cellspacing="0">
           <tbody><tr> 
             <td height="59" width="44">&nbsp;</td>
             <td height="59" width="44"><img src="white-ball.gif" height="44" width="44"></td>
@@ -787,11 +785,11 @@ In industry, actual programs often have multiple flags to control different aspe
 </p>
 <p>
     The backtracking method is named 
-    <code style="color:#660000">solvable</code>
+    <code style="color:brown">solvable</code>
     and returns a 
-    <code style="color:#660000">boolean</code>
+    <code style="color:brown">boolean</code>
     . In 
-    <code style="color:#660000">solvable</code>
+    <code style="color:brown">solvable</code>
     we shall need to check whether we are at a leaf, which in this case means a position from which no further moves are possible. This isn't so easy.
 </p>
 <p>
@@ -822,13 +820,13 @@ In industry, actual programs often have multiple flags to control different aspe
 </ul>
 <p>
     We write another method 
-    <code style="color:#660000">int[] makeMove(int[] oldBoard, int position)</code>
+    <code style="color:brown">int[] makeMove(int[] oldBoard, int position)</code>
      that will take a board and a position, make a move from that position, and return as its value a new board. (We could write this somewhat more efficiently by changing the old board, rather than creating a new one, but here we are more concerned with simplicity.) In technical jargon, makeMove is "applicative" rather than "mutative."
 </p>
 <p>
     With these methods, our central backtracking method can be written as follows:
 </p>
-<pre style="color:#660000">
+<pre style="color:brown">
     boolean solvable(int[] board) {
         if (puzzleSolved(board)) {
             return true;
@@ -847,33 +845,33 @@ In industry, actual programs often have multiple flags to control different aspe
 </pre>
 <p>
     Along with canMove and 
-    <code style="color:#660000">makeMove</code>
+    <code style="color:brown">makeMove</code>
     , we are using methods 
-    <code style="color:#660000">puzzleSolved</code>
+    <code style="color:brown">puzzleSolved</code>
     and 
-    <code style="color:#660000">printBoard</code>
+    <code style="color:brown">printBoard</code>
     with meanings that should be obvious.
 </p>
 <p>
     Here is some output from the program:
 </p>
 <pre>
-    <i><font color="#0000ff">16.</font>  </i><b><font color="#000000">WHITE  WHITE  WHITE  _____  BLACK  BLACK  BLACK</font></b>
-    <i><font color="#0000ff">15.</font></i>  <b><font color="#000000">WHITE  WHITE  WHITE  BLACK  _____  BLACK  BLACK</font></b>
-    <i><font color="#0000ff">14.</font></i>  <b><font color="#000000">WHITE  WHITE  _____  BLACK  WHITE  BLACK  BLACK</font></b>
-    <i><font color="#0000ff">13.</font></i>  <b><font color="#000000">WHITE  _____  WHITE  BLACK  WHITE  BLACK  BLACK</font></b>
-    <i><font color="#0000ff">12.</font></i>  <b><font color="#000000">WHITE  BLACK  WHITE  _____  WHITE  BLACK  BLACK</font></b>
-    <i><font color="#0000ff">11. </font></i> <b><font color="#000000">WHITE  BLACK  WHITE  BLACK  WHITE  _____  BLACK</font></b>
-    <i><font color="#0000ff">10.</font></i> <b><font color="#000000">WHITE  BLACK  WHITE  BLACK  WHITE  BLACK  _____</font></b>
-    <i><font color="#0000ff"> 9. </font></i> <b><font color="#000000">WHITE  BLACK  WHITE  BLACK  _____  BLACK  WHITE</font></b>
-    <i><font color="#0000ff"> 8. </font></i> <b><font color="#000000">WHITE  BLACK  _____  BLACK  WHITE  BLACK  WHITE</font></b>
-    <i><font color="#0000ff"> 7. </font></i> <b><font color="#000000">_____  BLACK  WHITE  BLACK  WHITE  BLACK  WHITE</font></b>
-    <i><font color="#0000ff"> 6. </font></i> <b><font color="#000000">BLACK  _____  WHITE  BLACK  WHITE  BLACK  WHITE</font></b>
-    <i><font color="#0000ff"> 5. </font></i> <b><font color="#000000">BLACK  BLACK  WHITE  _____  WHITE  BLACK  WHITE</font></b>
-    <i><font color="#0000ff"> 4. </font></i> <b><font color="#000000">BLACK  BLACK  WHITE  BLACK  WHITE  _____  WHITE</font></b>
-    <i><font color="#0000ff"> 3. </font></i> <b><font color="#000000">BLACK  BLACK  WHITE  BLACK  _____  WHITE  WHITE</font></b>
-    <i><font color="#0000ff"> 2.</font></i>  <b><font color="#000000">BLACK  BLACK  _____  BLACK  WHITE  WHITE  WHITE</font></b>
-    <i><font color="#0000ff"> 1. </font></i> <b><font color="#000000">BLACK  BLACK  BLACK  _____  WHITE  WHITE  WHITE</font></b>
+    <i><font style="color: black">16.</font>  </i><b><font style="color: black">WHITE  WHITE  WHITE  _____  BLACK  BLACK  BLACK</font></b>
+    <i><font style="color: black">15.</font></i>  <b><font style="color: black">WHITE  WHITE  WHITE  BLACK  _____  BLACK  BLACK</font></b>
+    <i><font style="color: black">14.</font></i>  <b><font style="color: black">WHITE  WHITE  _____  BLACK  WHITE  BLACK  BLACK</font></b>
+    <i><font style="color: black">13.</font></i>  <b><font style="color: black">WHITE  _____  WHITE  BLACK  WHITE  BLACK  BLACK</font></b>
+    <i><font style="color: black">12.</font></i>  <b><font style="color: black">WHITE  BLACK  WHITE  _____  WHITE  BLACK  BLACK</font></b>
+    <i><font style="color: black">11. </font></i> <b><font style="color: black">WHITE  BLACK  WHITE  BLACK  WHITE  _____  BLACK</font></b>
+    <i><font style="color: black">10.</font></i> <b><font style="color: black">WHITE  BLACK  WHITE  BLACK  WHITE  BLACK  _____</font></b>
+    <i><font style="color: black"> 9. </font></i> <b><font style="color: black">WHITE  BLACK  WHITE  BLACK  _____  BLACK  WHITE</font></b>
+    <i><font style="color: black"> 8. </font></i> <b><font style="color: black">WHITE  BLACK  _____  BLACK  WHITE  BLACK  WHITE</font></b>
+    <i><font style="color: black"> 7. </font></i> <b><font style="color: black">_____  BLACK  WHITE  BLACK  WHITE  BLACK  WHITE</font></b>
+    <i><font style="color: black"> 6. </font></i> <b><font style="color: black">BLACK  _____  WHITE  BLACK  WHITE  BLACK  WHITE</font></b>
+    <i><font style="color: black"> 5. </font></i> <b><font style="color: black">BLACK  BLACK  WHITE  _____  WHITE  BLACK  WHITE</font></b>
+    <i><font style="color: black"> 4. </font></i> <b><font style="color: black">BLACK  BLACK  WHITE  BLACK  WHITE  _____  WHITE</font></b>
+    <i><font style="color: black"> 3. </font></i> <b><font style="color: black">BLACK  BLACK  WHITE  BLACK  _____  WHITE  WHITE</font></b>
+    <i><font style="color: black"> 2.</font></i>  <b><font style="color: black">BLACK  BLACK  _____  BLACK  WHITE  WHITE  WHITE</font></b>
+    <i><font style="color: black"> 1. </font></i> <b><font style="color: black"BLACK  BLACK  BLACK  _____  WHITE  WHITE  WHITE</font></b>
 </pre>
 <p>
     Notice that the solution is given in reverse order: BLACK starts out on the left and WHITE on the right, as in the last line. I've added line numbers to the actual output in order to emphasize this point. Backtracking always produces its results (sequence of choices) in reverse order; it is up to you, the programmer, to reverse the results again to get them in the correct order.
